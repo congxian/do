@@ -27,6 +27,7 @@ static void f_luaopen(lua_State *L,void *ud){
 
 	stack_init();
 	luaS_init(L);
+	luaX_init(L);
 }
 
 static void preinit_thread(lua_State *L,global_State *g){

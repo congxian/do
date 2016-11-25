@@ -2,7 +2,9 @@
 #define lstate_h
 
 #include "xlua.h"
+#include "llex.h"
 #include "lobject.h"
+#include "lstring.h"
 #include "ldo.h"
 
 typedef struct CallInfo{
