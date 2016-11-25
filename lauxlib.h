@@ -1,8 +1,7 @@
 #ifndef lauxlib_h
 #define lauxlib_h
 
-#include "lstate.h"
-
+#include "xlua.h"
 
 extern lua_State* luaL_newstate();
 

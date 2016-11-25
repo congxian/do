@@ -2,6 +2,7 @@
 #include<stdlib.h>
 
 #include "xlua.h"
+#include "lstate.h"
 #include "lauxlib.h"
 
 

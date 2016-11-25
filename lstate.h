@@ -5,10 +5,18 @@
 #include "lobject.h"
 #include "ldo.h"
 
-
 typedef struct CallInfo{
 	StkId func;
 	StkId top;
+	struct CallInfo *prev,*next;
+	union{
+		struct{
+			StkId base;
+		}l;
+		struct{
+		}c;
+	}u;
+	unsigned short nresults;
 }CallInfo;
 
 typedef struct{
@@ -28,7 +36,7 @@ struct lua_State{
 
 	unsigned short nci;
 	CallInfo *ci;
-	CallInfo *base_ci;
+	CallInfo base_ci;
 
 	global_State *l_G;
 };
