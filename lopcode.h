@@ -6,4 +6,7 @@
 #define SIZE_B	9
 #define SIZE_C	9
 
+#define POS_O	0
+#define POS_A	6
+
 #endif
