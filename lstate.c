@@ -44,6 +44,8 @@ lua_State *lua_newstate(lua_Alloc f,void *ud){
 	global_State *g;
 
 	LG *lg = cast(LG*,(*f)(ud,NULL,LUA_TTHREAD,sizeof(LG)));
+	printf("lg address is 0x%x\n",lg);
+	printf("sizeof lg  is %d\n",sizeof(LG));
 	if(NULL == lg) return NULL;
 	
 	L = &lg->l.l;
