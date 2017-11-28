@@ -1,14 +1,16 @@
 CC = gcc -std=gnu99
 FLAG = -g -o 
-OBJ = doo.o table.o 
+OBJ = lua.o lauxlib.o lstate.o lmem.o
 
-doo :	$(OBJ) 
-	$(CC) $(FLAG) doo $(OBJ) 
-	rm -f $(OBJ)
+LUA = lua
 
-doo.o : doo.c 
-table.o : table.c
-object.o :object.c
+lua:	$(OBJ) 
+	$(CC) $(FLAG) $(LUA) $(OBJ)
+
+lua.o:	lua.c
+lauxlib.o: lauxlib.c
+lstate.o: lstate.c
+lmem.o:	lmem.c
 
 clean :
-	rm -f *.o
+	rm -f $(OBJ) lua
